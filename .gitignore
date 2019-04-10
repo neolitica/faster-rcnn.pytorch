@@ -204,3 +204,6 @@ lib/pycocotools/_mask.c
 voc
 VOCdevkit
 pyenv
+models
+images
+logs
