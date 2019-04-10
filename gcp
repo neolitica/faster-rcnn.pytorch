@@ -1,0 +1,7 @@
+ssh connect
+gcloud compute ssh deepclothes
+
+ssh tunnel
+
+gcloud compute ssh deepclothes -- -L 2222:localhost:6006
+and go to localhost:2222

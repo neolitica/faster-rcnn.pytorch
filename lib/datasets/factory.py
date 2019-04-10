@@ -26,7 +26,7 @@ for year in ['2007', '2012']:
     __sets[name] = (lambda split=split, year=year: pascal_voc(split, year))
 
 inria_devkit_path = 'data/deepfashion'
-for split in ['train']:
+for split in ['train','val','test']:
     name = '{}_{}'.format('deepfashion', split)
     __sets[name] = (lambda split=split: deepfashion(split, inria_devkit_path))
 

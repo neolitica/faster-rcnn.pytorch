@@ -7,3 +7,6 @@ tensorboard --logdir logs
 
 Train df
 CUDA_VISIBLE_DEVICES=0 python trainval_net.py --dataset df --net res101  --bs 1 --nw 4 --lr 0.001 --lr_decay_step 5 --cuda --use_tfb
+
+Train GCP
+CUDA_VISIBLE_DEVICES=0 python trainval_net.py --dataset df --net res101  --bs 8 --nw 8 --lr 0.004 --lr_decay_step 8 --cuda --use_tfb

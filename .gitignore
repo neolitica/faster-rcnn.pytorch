@@ -205,5 +205,4 @@ voc
 VOCdevkit
 pyenv
 models
-images
 logs
