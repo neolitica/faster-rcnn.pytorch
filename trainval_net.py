@@ -277,7 +277,6 @@ if __name__ == '__main__':
     fasterRCNN.cuda()
 
   if args.resume:
-    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     load_name = os.path.join(output_dir,
       'faster_rcnn_{}_{}_{}.pth'.format(args.checksession, args.checkepoch, args.checkpoint))
     print("loading checkpoint %s" % (load_name))
