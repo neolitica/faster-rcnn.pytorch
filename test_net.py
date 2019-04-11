@@ -321,7 +321,7 @@ if __name__ == '__main__':
       if vis:
           cv2.imwrite('result.png', im2show)
           tensor_image = transforms.ToTensor()(im2show)
-          writer.add_image('test_image', tensor_image, i+1)
+          logger.add_image('test_image', tensor_image, i+1)
           #pdb.set_trace()
           #cv2.imshow('test', im2show)
           #cv2.waitKey(0)
