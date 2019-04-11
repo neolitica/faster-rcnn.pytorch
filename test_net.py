@@ -20,6 +20,7 @@ import torch
 from torch.autograd import Variable
 import torch.nn as nn
 import torch.optim as optim
+from torchvision import transforms
 import pickle
 from roi_data_layer.roidb import combined_roidb
 from roi_data_layer.roibatchLoader import roibatchLoader
@@ -317,6 +318,8 @@ if __name__ == '__main__':
 
       if vis:
           cv2.imwrite('result.png', im2show)
+          tensor_image = transforms.ToTensor()(im2show)
+          
           pdb.set_trace()
           #cv2.imshow('test', im2show)
           #cv2.waitKey(0)
