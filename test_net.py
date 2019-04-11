@@ -207,6 +207,8 @@ if __name__ == '__main__':
   vis = args.vis
 
   if vis:
+    from tensorboardX import SummaryWriter
+    logger = SummaryWriter("logs")
     thresh = 0.05
   else:
     thresh = 0.0
@@ -319,8 +321,8 @@ if __name__ == '__main__':
       if vis:
           cv2.imwrite('result.png', im2show)
           tensor_image = transforms.ToTensor()(im2show)
-          
-          pdb.set_trace()
+          writer.add_image('test_image', tensor_image, i+1)
+          #pdb.set_trace()
           #cv2.imshow('test', im2show)
           #cv2.waitKey(0)
 
