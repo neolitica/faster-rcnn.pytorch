@@ -273,7 +273,7 @@ class FRCnnWrapper():
                 if score > 0.5: # inference threshhold
                   bbox = tuple(int(np.round(x)) for x in cls_dets_cpu[i, :4])
                   classes_img.append(self.pascal_classes[j])
-                  bboxes_img.append((bbox[0:2], bbox[2:4]))
+                  bboxes_img.append(bbox[0:4])
                   scores_img.append(score)
         cls_array.append(classes_img)
         scores_array.append(scores_img)
