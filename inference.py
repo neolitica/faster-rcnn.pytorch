@@ -278,9 +278,6 @@ class FRCnnWrapper():
         cls_array.append(classes_img)
         scores_array.append(scores_img)
         bbox_array.append(bboxes_img)
-        print(cls_array)
-        print(scores_array)
-        print(bbox_array)
 
       return cls_array, scores_array, bbox_array
 if __name__ == '__main__':
