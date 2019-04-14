@@ -7,7 +7,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import _init_paths
+from ._init_paths import *
 import os
 import sys
 import numpy as np
@@ -143,7 +143,7 @@ class FRCnnWrapper():
   def __init__(self):
       self.cuda = 1
       cfg.USE_GPU_NMS = self.cuda
-      self.input_dir = "models/res101/df"
+      self.input_dir = os.path.dirname(os.path.realpath(__file__)) + "/models/res101/df"
       np.random.seed(cfg.RNG_SEED)
       self.load_name = os.path.join(self.input_dir,
       'faster_rcnn_{}_{}_{}.pth'.format(1, 4, 26151))
@@ -273,7 +273,7 @@ class FRCnnWrapper():
                 if score > 0.5: # inference threshhold
                   bbox = tuple(int(np.round(x)) for x in cls_dets_cpu[i, :4])
                   classes_img.append(self.pascal_classes[j])
-                  bboxes_img.append(bbox[0:4])
+                  bboxes_img.append(bbox)
                   scores_img.append(score)
         cls_array.append(classes_img)
         scores_array.append(scores_img)
